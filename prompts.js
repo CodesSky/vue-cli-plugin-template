@@ -59,12 +59,12 @@ module.exports = [
     //         }
     //     ]
     // },
-    {
-        when:"operation.add && operation.edit",
-        type:"confirm",
-        message :"Is adding and editing the same file?",
-        name: "ishandle"
-    },
+    // {
+    //     when:"operation.add && operation.edit",
+    //     type:"confirm",
+    //     message :"Is adding and editing the same file?",
+    //     name: "ishandle"
+    // },
     {
         type:"editor",
         message :"table column info?",
