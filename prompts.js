@@ -1,3 +1,10 @@
+function jsonFormat(info){
+    var jsonReg = /(\\)|\/\/.*$/mg;
+    return JSON.parse(info.replace(jsonReg,''));
+}
+
+
+
 module.exports = [
     {
         type: "checkbox",
