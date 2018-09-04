@@ -7,9 +7,9 @@ function jsonFormat(info){
 
 module.exports = [
     {
+        name:'operation',
         type: "checkbox",
         message: 'What content are included ？',
-        name:'operation',
         choices: [
             {
                 name: "1) table",
@@ -73,9 +73,9 @@ module.exports = [
     //     name: "ishandle"
     // },
     {
+        name: "tableInfo",
         type:"editor",
         message :"table column info?",
-        name: "tableInfo",
         validate: function(val) {
             try {
                 if(!jsonFormat(val).Data.List[0]){
