@@ -48,17 +48,19 @@ module.exports = (api) => {
         webpackConfig.optimization.splitChunks().clear();
         webpackConfig.plugins.delete('named-chunks');
         webpackConfig.resolve.alias.set('vue$', 'vue/dist/vue.esm.js');
-        htmlTemplate.forEach(filename => {
-            webpackConfig.plugins.delete(`html-${filename.split('.')[0]}`);
-            webpackConfig.plugins.delete(`prefetch-${filename.split('.')[0]}`);
-            webpackConfig.plugins.delete(`preload-${filename.split('.')[0]}`);
-        });
-        webpackConfig.plugin('copy').tap(params=>{
+        if (process.env.NODE_ENV === 'production'){
             htmlTemplate.forEach(filename => {
-                params[0][0].ignore.push(filename);
+                webpackConfig.plugins.delete(`html-${filename.split('.')[0]}`);
+                webpackConfig.plugins.delete(`prefetch-${filename.split('.')[0]}`);
+                webpackConfig.plugins.delete(`preload-${filename.split('.')[0]}`);
             });
-            return params;
-        });
+            webpackConfig.plugin('copy').tap(params=>{
+                htmlTemplate.forEach(filename => {
+                    params[0][0].ignore.push(filename);
+                });
+                return params;
+            });
+        }
     });
     api.configureWebpack(webpackConfig => {
     // 修改 webpack 配置
