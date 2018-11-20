@@ -13,8 +13,9 @@ module.exports = (api, options) => {
             './src/router/page-name.js': './templates/src/router/page-name.js',
             './src/store/page-name.js': './templates/src/store/page-name.js',
             './public/page-name.html': './templates/public/page-name.html',
+            './src/page/page-name/index.vue': './templates/src/page/page-name/index.vue',
             './src/view/page-name/main.js': './templates/src/view/page-name/main.js',
-            './src/view/page-name/component/App.vue': './templates/src/view/page-name/component/App.vue',
+            './src/view/page-name/App.vue': './templates/src/view/page-name/App.vue',
             './src/index.html': './templates/src/index.html'
         }, {fileName: htmlFile,pageName:options.fileName});
         if (options.operation.indexOf('add') !== -1 && !options.isHandle){

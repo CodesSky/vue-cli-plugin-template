@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-template",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "template plugin for vue-cli",
   "main": "index.js",
   "repository": {
