@@ -13,8 +13,8 @@ module.exports = (api, options) => {
             './src/router/page-name.js': './templates/src/router/page-name.js',
             './src/store/page-name.js': './templates/src/store/page-name.js',
             './public/page-name.html': './templates/public/page-name.html',
-            './src/page/page-name/main.js': './templates/src/page/page-name/main.js',
-            './src/page/page-name/component/App.vue': './templates/src/page/page-name/component/App.vue',
+            './src/view/page-name/main.js': './templates/src/view/page-name/main.js',
+            './src/view/page-name/component/App.vue': './templates/src/view/page-name/component/App.vue',
             './src/index.html': './templates/src/index.html'
         }, {fileName: htmlFile,pageName:options.fileName});
         if (options.operation.indexOf('add') !== -1 && !options.isHandle){
@@ -32,7 +32,7 @@ module.exports = (api, options) => {
         if (options.operation.indexOf('view') !== -1){
             api.render({'./src/page/page-name/component/view.vue': './templates/src/page/page-name/component/view.vue'});
         }
-        pageConfig[options.fileName] = `src/page/${options.fileName}/main.js`;
+        pageConfig[options.fileName] = `src/view/${options.fileName}/main.js`;
         api.extendPackage({
             vue: {
                 pages: pageConfig
