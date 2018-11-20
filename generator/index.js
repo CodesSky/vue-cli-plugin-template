@@ -44,10 +44,12 @@ module.exports = (api, options) => {
                 `${api.resolve('public')}/${options.fileName}.html`); 
             fs.rename(`${api.resolve('src')}/page/page-name`,
                 `${api.resolve('src')}/page/${options.fileName}`);   
+            fs.rename(`${api.resolve('src')}/view/page-name`,
+                `${api.resolve('src')}/view/${options.fileName}`);
             fs.rename(`${api.resolve('src')}/router/page-name.js`,
                 `${api.resolve('src')}/router/${options.fileName}.js`);    
             fs.rename(`${api.resolve('src')}/store/page-name.js`,
-                `${api.resolve('src')}/store/${options.fileName}.js`);    
+                `${api.resolve('src')}/store/${options.fileName}.js`);   
         });
     }
 };
