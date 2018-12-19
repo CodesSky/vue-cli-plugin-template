@@ -10,28 +10,28 @@ module.exports = (api, options) => {
 
         htmlFile.push(options.fileName + '.html');
         api.render({
-            './src/router/page-name.js': './templates/src/router/page-name.js',
-            './src/store/page-name.js': './templates/src/store/page-name.js',
-            './public/page-name.html': './templates/public/page-name.html',
-            './src/page/page-name/index.vue': './templates/src/page/page-name/index.vue',
-            './src/view/page-name/main.js': './templates/src/view/page-name/main.js',
-            './src/view/page-name/App.vue': './templates/src/view/page-name/App.vue',
-            './src/index.html': './templates/src/index.html'
+            './src/router/page-name.js': './template/src/router/page-name.js',
+            './src/store/page-name.js': './template/src/store/page-name.js',
+            './public/page-name.html': './template/public/page-name.html',
+            './src/page/page-name/index.vue': './template/src/page/page-name/index.vue',
+            './src/view/page-name/main.js': './template/src/view/page-name/main.js',
+            './src/view/page-name/App.vue': './template/src/view/page-name/App.vue',
+            './src/index.html': './template/src/index.html'
         }, {fileName: htmlFile,pageName:options.fileName});
         if (options.operation.indexOf('add') !== -1 && !options.isHandle){
-            api.render({'./src/page/page-name/component/add.vue': './templates/src/page/page-name/component/add.vue'});
+            api.render({'./src/page/page-name/component/add.vue': './template/src/page/page-name/component/add.vue'});
         }
         if (options.operation.indexOf('edit') !== -1 && !options.isHandle){
-            api.render({'./src/page/page-name/component/edit.vue': './templates/src/page/page-name/component/edit.vue'});
+            api.render({'./src/page/page-name/component/edit.vue': './template/src/page/page-name/component/edit.vue'});
         }
         if (options.isHandle){
-            api.render({'./src/page/page-name/component/handle.vue': './templates/src/page/page-name/component/handle.vue'});
+            api.render({'./src/page/page-name/component/handle.vue': './template/src/page/page-name/component/handle.vue'});
         }
         if (options.operation.indexOf('search') !== -1){
-            api.render({'./src/page/page-name/component/search.vue': './templates/src/page/page-name/component/search.vue'});
+            api.render({'./src/page/page-name/component/search.vue': './template/src/page/page-name/component/search.vue'});
         }
         if (options.operation.indexOf('view') !== -1){
-            api.render({'./src/page/page-name/component/view.vue': './templates/src/page/page-name/component/view.vue'});
+            api.render({'./src/page/page-name/component/view.vue': './template/src/page/page-name/component/view.vue'});
         }
         pageConfig[options.fileName] = `src/view/${options.fileName}/main.js`;
         api.extendPackage({
