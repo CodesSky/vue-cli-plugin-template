@@ -2,7 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = (api) => {
+module.exports = (api, option) => {
     var files = fs.readdirSync(api.resolve('public'));
     var htmlTemplate = files.filter((f)=>{
         return f.indexOf('.html') !== -1;
@@ -37,6 +37,7 @@ module.exports = (api) => {
         Object.keys(scriptServer).forEach((env)=>{
             var server = scriptServer[env];
             
+            options.version = option.pluginOptions.version;
             options.src = server;
             options.title = filename;
             options.filename = path.resolve(`dist/html/${text[env]}/${file}`);
